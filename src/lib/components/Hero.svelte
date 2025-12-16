@@ -15,7 +15,7 @@
 <div class="container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-20">
 	<div class="max-w-5xl mx-auto text-center relative">
 		<div>
-			<h1 class="text-4xl md:text-5xl tracking-tight mb-8">
+			<h1 class=" tracking-tight mb-8">
 				{titleLine1}
 				<br />
 				{titleLine2}

@@ -1,22 +1,23 @@
 <script>
-  const {data} = $props();
+	import { resolve } from '$app/paths';
 
-  console.log("Data", data.sidebar.items)
+  const {data} = $props();
+  console.log("Data", data.sidebar)
 </script>
 
 <div class="docs-layout">
   <!-- Sidebar -->
   <aside class="sidebar">
-    {#each data.sidebar as group}
+    {#each data.sidebar as group, i (i)}
       <div class="group">
         {#if !group.isRoot}
-          <h3>{group.title}</h3>
+          <h3 class="group-title">{group.title}</h3>
         {/if}
-        <ul>
-          {#each group.items as item}
+        <ul class="group-items">
+          {#each group.items as item (item.url)}
             <li>
               <a
-                href={item.url}
+                href={resolve(item.url)}
                 class:active={data.currentPath === item.url}
               >
                 {item.title}
@@ -35,7 +36,7 @@
       <p class="description">{data.page.metadata.description}</p>
     {/if}
 
-    <!-- Render .svx content -->
+    <!-- Render .svx content - FIXED -->
     <data.page.content/>
   </main>
 </div>

@@ -3,11 +3,15 @@ import { error } from '@sveltejs/kit';
 
 export function load({ params }) {
   const slug = params.slug || '';
-  const fullPath = `/docs/${slug}`;
+  const fullPath = slug ? `/docs/${slug}` : '/docs';
+  const sidebarRaw = getSidebarData('docs');
 
-  const sidebar = getSidebarData('docs');
-
-  console.log("Sidebar", sidebar)
+  // Convert object to array
+   const sidebar = Object.entries(sidebarRaw).map(([key, items]) => ({
+     title: key,
+     isRoot: key === 'Root',
+     items: items
+   }));
 
   const pageData = getPageContent(fullPath);
 

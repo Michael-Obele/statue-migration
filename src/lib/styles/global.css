@@ -31,6 +31,14 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 800;
 }
 
+h1 {
+    @apply text-4xl md:text-5xl font-light;
+}
+
+h2,h3,h4,h5,h6 {
+    @apply text-3xl md:text-2xl
+}
+
 /*button {
     @apply inline-flex text-white inset-shadow-sm inset-shadow-gray-400 rounded-lg cursor-pointer focus:inset-shadow-white/10;
         box-shadow:  inset 0 2px 4px var(--text);

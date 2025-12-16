@@ -462,7 +462,6 @@ export function getContentByDirectory(directory:string) {
      // Add file to group
      groups[groupTitle].push({
        title: metadata.title || fileName,
-       slug: relativePath, // Full path for URL
        url: `/${directory}/${relativePath}`,
        order: metadata.order || 999
      });
