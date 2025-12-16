@@ -5,9 +5,9 @@ description: Privacy Policy for {{site.name}}
 
 # Privacy Policy
 
-Last updated: {{legal.privacyPolicyLastUpdated}}
+Last updated: {legal.privacyPolicyLastUpdated}
 
-This Privacy Policy explains how {{site.name}} ("we", "our", or "company") collects, uses, and shares 
+This Privacy Policy explains how {site.name} ("we", "our", or "company") collects, uses, and shares 
 your personal information when you use our website and services.
 
 ## Information We Collect
@@ -60,5 +60,5 @@ page to opt-out of the sale or sharing of your personal information.
 
 If you have any questions or concerns about this Privacy Policy, please contact us:
 
-- Email: [{{contact.privacyEmail}}](mailto:{{contact.privacyEmail}})
-- Address: {{contact.address.full}} 
+- Email: [{contact.privacyEmail}}](mailto:{contact.privacyEmail})
+- Address: {contact.address.full}

@@ -6,18 +6,19 @@ import fs from "fs";
 import path from "path";
 
 // Import site configuration
-import siteConfig from "/site.config.js";
+// import siteConfig from "/site.config.js";
 
 // This error check is to provide an early warning when this module is attempted to be used in the browser
-const isBrowser = typeof window !== "undefined" && typeof document !== "undefined";
-if (isBrowser) {
-  console.error("content-processor.js should only be used on the server side!");
-  throw new Error("Content processor cannot run on the client side!");
-}
+  // const isBrowser = typeof window !== "undefined" && typeof document !== "undefined";
+  // if (isBrowser) {
+  //   console.error("content-processor.js should only be used on the server side!");
+  //   throw new Error("Content processor cannot run on the client side!");
+  // }
 
 // Scans all markdown files and folders in the content directory
 const scanContentDirectory = () => {
   const contentPath = path.resolve("content");
+  console.log({contentPath})
   const contentEntries = [];
 
   if (!fs.existsSync(contentPath)) {
@@ -84,7 +85,7 @@ const scanContentDirectory = () => {
         };
 
         // Fix directory - use full path
-        let directory = relativePath.replace(/\\/g, "/");
+        const directory = relativePath.replace(/\\/g, "/");
 
         // Add main directory information to create content tree
         const mainDirectory = directory.split("/")[0] || "root";
@@ -112,31 +113,31 @@ const scanContentDirectory = () => {
 };
 
 // Function that detects folders in the content directory
-const getContentDirectories = () => {
-  const contentPath = path.resolve("content");
-  const directories = [];
+// const getContentDirectories = () => {
+//   const contentPath = path.resolve("content");
+//   const directories = [];
 
-  if (!fs.existsSync(contentPath)) {
-    console.warn("Content folder not found!");
-    return directories;
-  }
+//   if (!fs.existsSync(contentPath)) {
+//     console.warn("Content folder not found!");
+//     return directories;
+//   }
 
-  const entries = fs.readdirSync(contentPath);
+//   const entries = fs.readdirSync(contentPath);
 
-  for (const entry of entries) {
-    const fullPath = path.join(contentPath, entry);
-    if (fs.statSync(fullPath).isDirectory()) {
-      directories.push({
-        name: entry,
-        path: `content/${entry}`,
-        title: formatTitle(entry),
-        url: `/${entry}`,
-      });
-    }
-  }
+//   for (const entry of entries) {
+//     const fullPath = path.join(contentPath, entry);
+//     if (fs.statSync(fullPath).isDirectory()) {
+//       directories.push({
+//         name: entry,
+//         path: `content/${entry}`,
+//         title: formatTitle(entry),
+//         url: `/${entry}`,
+//       });
+//     }
+//   }
 
-  return directories;
-};
+//   return directories;
+// };
 
 // Function that shortens markdown content up to a specific length
 const truncateContent = (content, maxLength = 200) => {
@@ -182,47 +183,47 @@ const getAllContent = () => {
 };
 
 // Get content for a specific URL
-const getContentByUrl = (url) => {
-  const allContent = getAllContent();
+// const getContentByUrl = (url) => {
+//   const allContent = getAllContent();
 
-  // Remove trailing slash (/) from URL
-  const normalizedUrl = url.endsWith("/") ? url.slice(0, -1) : url;
+//   // Remove trailing slash (/) from URL
+//   const normalizedUrl = url.endsWith("/") ? url.slice(0, -1) : url;
 
-  console.log("Normalized URL for lookup:", normalizedUrl);
+//   console.log("Normalized URL for lookup:", normalizedUrl);
 
-  // Check content URLs and find matching content
-  const result = allContent.find((entry) => {
-    // Remove trailing slash from content URL as well
-    const entryUrl = entry.url.endsWith("/") ? entry.url.slice(0, -1) : entry.url;
-    console.log(`Comparing: "${entryUrl}" vs "${normalizedUrl}"`);
-    return entryUrl === normalizedUrl;
-  });
+//   // Check content URLs and find matching content
+//   const result = allContent.find((entry) => {
+//     // Remove trailing slash from content URL as well
+//     const entryUrl = entry.url.endsWith("/") ? entry.url.slice(0, -1) : entry.url;
+//     console.log(`Comparing: "${entryUrl}" vs "${normalizedUrl}"`);
+//     return entryUrl === normalizedUrl;
+//   });
 
-  console.log("Match result:", result ? `Found: ${result.url}` : "Not found");
-  return result;
-};
+//   console.log("Match result:", result ? `Found: ${result.url}` : "Not found");
+//   return result;
+// };
 
 // Get content from a specific directory
-const getContentByDirectory = (directory) => {
-  const allContent = getAllContent();
+// const getContentByDirectory = (directory) => {
+//   const allContent = getAllContent();
 
-  // Direct matching for main directories
-  if (directory === "root") {
-    return allContent.filter((entry) => entry.directory === "root");
-  }
+//   // Direct matching for main directories
+//   if (directory === "root") {
+//     return allContent.filter((entry) => entry.directory === "root");
+//   }
 
-  // Get all content that starts with the specified directory, including subdirectories
-  return allContent.filter((entry) => {
-    // 1. Exact match case (e.g., 'blog' directory for 'blog')
-    // 2. Subdirectory match (e.g., 'blog/category' directory for 'blog')
-    return entry.directory === directory || entry.directory.startsWith(directory + "/");
-  });
-};
+//   // Get all content that starts with the specified directory, including subdirectories
+//   return allContent.filter((entry) => {
+//     // 1. Exact match case (e.g., 'blog' directory for 'blog')
+//     // 2. Subdirectory match (e.g., 'blog/category' directory for 'blog')
+//     return entry.directory === directory || entry.directory.startsWith(directory + "/");
+//   });
+// };
 
 // Clear cache (might be necessary in development mode)
-const clearContentCache = () => {
-  cachedContent = null;
-};
+// const clearContentCache = () => {
+//   cachedContent = null;
+// };
 
 // Function to find subdirectories - returns subdirectories for a specific directory
 const getSubDirectories = (directory) => {
@@ -396,18 +397,73 @@ const getAllDirectoriesSidebar = () => {
   return result;
 };
 
-// Export functions
-export {
-  scanContentDirectory,
-  getContentDirectories,
-  truncateContent,
-  formatTitle,
-  getAllContent,
-  getContentByUrl,
-  getContentByDirectory,
-  clearContentCache,
-  getSubDirectories,
-  processTemplateVariables,
-  getSidebarTree,
-  getAllDirectoriesSidebar,
-};
+// no need as we can access it using $lib import
+// export {
+//   scanContentDirectory,
+//   getContentDirectories,
+//   truncateContent,
+//   formatTitle,
+//   getAllContent,
+//   getContentByUrl,
+//   getContentByDirectory,
+//   clearContentCache,
+//   getSubDirectories,
+//   processTemplateVariables,
+//   getSidebarTree,
+//   getAllDirectoriesSidebar,
+// };
+
+
+
+// -------------------------------------------------
+
+/**
+ * Get all top-level directories in the content folder
+ */
+export function getContentDirectories() {
+  const contentFiles = import.meta.glob('/content/**/*.{md,svx}', { eager: true });
+  const directories = new Set();
+
+  Object.keys(contentFiles).forEach((path) => {
+    // Extract first directory after /content/
+    // e.g., "/content/blog/post.md" -> "blog"
+    const match = path.match(/^\/content\/([^/]+)\//);
+    if (match) {
+      directories.add(match[1]);
+    }
+  });
+
+  return Array.from(directories).map((name) => ({
+    name,
+    title: formatTitle(name),
+    url: `/${name}`
+  }));
+}
+
+/**
+ * Get all content entries from a specific directory
+ */
+export function getContentByDirectory(directory:string) {
+  const contentFiles = import.meta.glob('/content/**/*.{md,svx}', { eager: true });
+  const entries = [];
+
+  Object.entries(contentFiles).forEach(([path, module]) => {
+    // Check if file is in the specified directory
+    const dirPattern = new RegExp(`^/content/${directory}/`);
+    if (!dirPattern.test(path)) return;
+
+    // Extract slug and relative path
+    const relativePath = path.replace('/content/', '').replace(/\.(md|svx)$/, '');
+    const slug = relativePath.split('/').pop();
+    const url = `/${relativePath}`;
+
+    entries.push({
+      slug,
+      path: relativePath,
+      url,
+      metadata: module.metadata || {}
+    });
+  });
+
+  return entries;
+}

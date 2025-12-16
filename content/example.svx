@@ -48,8 +48,8 @@ function hello() {
 
 [Statue SSG GitHub](https://github.com/your-username/statue)
 
-![Example Image](https://via.placeholder.com/150)
+![Example](https://via.placeholder.com/150)
 
 ---
 
-Statue SSG makes content creation very easy! 
+Statue SSG makes content creation very easy!

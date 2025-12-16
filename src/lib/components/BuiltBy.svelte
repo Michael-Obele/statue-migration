@@ -1,7 +1,7 @@
 
 <script lang="ts">
-  import accretionIconSrc from '../assets/accretion.png';
-  import statueIconSrc from '../assets/favicon.png';
+  import accretionIconSrc from '$lib/assets/accretion.png';
+  import statueIconSrc from '$lib/assets/favicon.png';
 
   export let builtByText = 'Built by';
   export let builtByLinkText = 'Accretional.com';
@@ -41,36 +41,36 @@
   .discord-link {
     color: rgba(114, 137, 218, 0.95);
   }
-  
+
   /* Remove display: inline-flex from built-by-container since we use Tailwind flex classes */
   .built-by-container {
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 400;
     line-height: 1.6;
   }
-  
+
   .built-text {
     color: rgba(255, 255, 255, 0.8);
   }
-  
+
   .built-link {
     text-decoration: underline;
     transition: all 0.3s ease;
   }
-  
+
   .accretional-link {
     color: #FF4500;
     text-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
     animation: glow 2s ease-in-out infinite;
     position: relative;
   }
-  
+
   .accretional-link:hover {
     color: #FF6347;
     text-shadow: 0 0 20px rgba(255, 99, 71, 0.8), 0 0 30px rgba(255, 69, 0, 0.6);
     animation: pulse 1s ease-in-out infinite;
   }
-  
+
   @keyframes glow {
     0%, 100% {
       text-shadow: 0 0 10px rgba(255, 69, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.3);
@@ -79,7 +79,7 @@
       text-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 30px rgba(255, 69, 0, 0.5), 0 0 40px rgba(255, 69, 0, 0.3);
     }
   }
-  
+
   @keyframes pulse {
     0%, 100% {
       transform: scale(1);
@@ -90,15 +90,15 @@
       text-shadow: 0 0 30px rgba(255, 99, 71, 1), 0 0 40px rgba(255, 69, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.6);
     }
   }
-  
+
   .statue-link {
     color: #9CA3AF;
   }
-  
+
   .statue-link:hover {
     color: #D1D5DB;
   }
-  
+
   .accretion-icon, .statue-icon {
     /* Keep sizing for compatibility but rely on attributes/Tailwind mostly */
     width: 1.2em;
@@ -106,7 +106,6 @@
     display: inline-block;
     vertical-align: middle;
   }
-  
+
   /* .statue-group removed display styles as they are now in HTML classes */
 </style>
-

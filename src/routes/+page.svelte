@@ -6,8 +6,7 @@
   import LatestContent from '$lib/components/LatestContent.svelte';
   import BuiltBy from '$lib/components/BuiltBy.svelte';
 
-  const {data, params} = $props();
-
+  const {data} = $props();
 </script>
 
 <svelte:head>
@@ -33,10 +32,10 @@
   <!-- Content Sections -->
   <div class="container mx-auto px-4 py-10">
     <!-- Categories Section -->
-    <Categories {data.directories} />
+    <Categories directories={data.directories} />
 
     <!-- Latest Content Section -->
-    <LatestContent {data.rootContent} />
+    <LatestContent rootContent={data.rootContent} />
   </div>
 </div>
 
