@@ -33,16 +33,12 @@
 	@media (min-width: 832px) {
 		.sidebar {
 			display: block;
-			position: fixed;
-			top: var(--nav-height);
-			left: 0;
-			max-width: var(--sidebar-width);
+			flex-shrink: 0;
+			width: 16rem;
 			height: calc(100vh - var(--nav-height));
 			overflow-y: auto;
-		}
-
-		.content {
-			margin-left: var(--sidebar-width);
+			position: sticky;
+			top: var(--nav-height);
 		}
 	}
 
