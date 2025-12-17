@@ -26,8 +26,21 @@
   - bind:headings: Extracted headings for TOC (reactive output)
 -->
 
-
-<h1 class="text-red-600">
+<aside>
+<p class="text-red-600">
     helloo hello
+    helloo hello
+        helloo hello
+            helloo hello
+                helloo hello
+                    helloo hello
+                        helloo hello
+</p>
+</aside>
 
-</h1>
+
+<style>
+    aside {
+        width: var(--sidebar-width);
+    }
+</style>

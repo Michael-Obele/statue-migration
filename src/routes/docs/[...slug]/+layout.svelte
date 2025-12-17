@@ -3,14 +3,14 @@
 
 
     const {data, children} = $props();
-    console.log("data", data)
+    console.log("data", data.sidebar)
 </script>
 
 
-<div class="article-container">
-	<div class="sidebar-container">
-		<DocsContents contents={data.sections} />
-	</div>
+<div class="article-layout">
+	<aside class="sidebar">
+		<DocsContents contents={data.sidebar} />
+	</aside>
 
 	<div class="content">
 		{@render children()}
@@ -18,18 +18,47 @@
 </div>
 
 <style>
-	.article-container {
-		--sidebar-width: 28rem;
-
-		/*display: flex;
-		flex-direction: column;*/
+	.article-layout {
+		--sidebar-width: 16rem;
+		--content-width: 640px;
+		--page-padding: 1.5rem;
 	}
 
-	.sidebar-container {
-	    max-width: var(--sidebar-width);
-	}
+	.sidebar {
+  display: none;
+}
 
-	.content {
-	    padding-left: var(--sidebar-width)
-	}
+@media (min-width: 832px) {
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+  }
+
+  .content {
+    padding-left: calc(var(--sidebar-width) + var(--page-padding));
+  }
+}
+
+/* Content */
+.content {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: var(--page-padding);
+  min-width: 0;
+}
+
+/* Wide screens: keep content centered */
+@media (min-width: 1200px) {
+  .layout {
+    --sidebar-width: max(
+      16rem,
+      calc(0.5 * (100vw - var(--content-width)))
+    );
+  }
+}
 </style>
