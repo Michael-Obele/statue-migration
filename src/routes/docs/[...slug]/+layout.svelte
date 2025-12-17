@@ -5,7 +5,7 @@
 </script>
 
 <div class="article-layout">
-	<aside class="sidebar bg-pink-300/50">
+	<aside class="sidebar bg-fuchsia-300">
 		<DocsContents contents={data.sidebar} />
 	</aside>
 
