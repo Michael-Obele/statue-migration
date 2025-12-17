@@ -4,8 +4,6 @@ description: Quick introduction to Statue SSG and key concepts
 order: 1
 ---
 
-# Getting Started with Statue
-
 Statue is a static site generator that transforms markdown files into a fast, modern website. It's built on SvelteKit and designed to be simple yet flexible.
 
 > **Contribute to Statue!** Built a cool component, theme, or template? Share it with the community—it only takes a single command. **[Learn how →](https://github.com/accretional/statue/blob/main/CONTRIBUTING.md)**

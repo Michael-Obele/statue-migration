@@ -3,8 +3,6 @@ title: New Site Checklist
 description: Step-by-step checklist for customizing your new Statue site
 ---
 
-# New Site Checklist
-
 Follow this checklist to replace placeholder content and make the site your own.
 
 > **Want to contribute back?** Statue welcomes contributions of components, themes, and templates. It only takes a single command to submit a PR. **[Learn more →](https://github.com/accretional/statue/blob/main/CONTRIBUTING.md)**

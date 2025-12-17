@@ -9,5 +9,5 @@ export function load() {
   }
 
   // Redirect to first page
-  throw redirect(307, firstPage);
+  return redirect(307, firstPage);
 }

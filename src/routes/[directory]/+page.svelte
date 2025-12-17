@@ -39,7 +39,7 @@
 <NavigationBar navbarItems={directories} activePath={currentDirectory.url} />
 
 <div
-    class="min-h-screen text-white bg-gradient-to-b from-[var(--color-hero-from)] via-[var(--color-hero-via)] to-[var(--color-hero-to)]"
+    class="min-h-screen text-white bg-linear-to-b from-(--brand) via-(--brand-2) to-(--bg)"
 >
     <div class="container mx-auto px-4 py-16">
         <DirectoryHeader title={currentDirectory.title} />
