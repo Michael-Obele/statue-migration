@@ -1,7 +1,7 @@
 <script lang="ts">
-    const {children} = $props();
+	const { children } = $props();
 </script>
 
-<main class="pt-(--nav-height)">
-    {@render children()}
-</main>
+<div class="pt-(--nav-height)">
+	{@render children()}
+</div>

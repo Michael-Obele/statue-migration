@@ -8,12 +8,6 @@
 		order: number;
 	};
 
-	type Section = {
-		title: string;
-		isRoot: boolean;
-		items: Item[];
-	};
-
 	const { contents } = $props<{ contents: Section[] }>();
 
 	const pathname = page.url.pathname;
@@ -41,6 +35,36 @@
 					</li>
 				{/each}
 			</ul>
+
+			<ul class="list">
+				{#each sortItems(section.items) as item (item.url)}
+					<li>
+						<a href={resolve(item.url)} class="link" class:active={pathname === item.url}>
+							{item.title}
+						</a>
+					</li>
+				{/each}
+			</ul>
+
+			<ul class="list">
+				{#each sortItems(section.items) as item (item.url)}
+					<li>
+						<a href={resolve(item.url)} class="link" class:active={pathname === item.url}>
+							{item.title}
+						</a>
+					</li>
+				{/each}
+			</ul>
+
+			<ul class="list">
+				{#each sortItems(section.items) as item (item.url)}
+					<li>
+						<a href={resolve(item.url)} class="link" class:active={pathname === item.url}>
+							{item.title}
+						</a>
+					</li>
+				{/each}
+			</ul>
 		</div>
 	{/each}
 </nav>
@@ -50,7 +74,6 @@
 		color: var(--text);
 		height: 100vh;
 		padding: var(--page-padding);
-		margin: 0 0 0 auto;
 		padding-top: calc(var(--page-padding) * 3);
 		position: sticky;
 		top: 0;
@@ -77,7 +100,6 @@
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 2px;
 	}
 
 	.link {

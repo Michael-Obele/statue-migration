@@ -2,7 +2,6 @@
 	import OnThisPage from '$lib/components/OnThisPage.svelte';
 
 	const { data } = $props();
-	console.log({ data });
 </script>
 
 <article>

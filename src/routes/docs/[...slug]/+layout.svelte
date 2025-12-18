@@ -16,7 +16,7 @@
 
 <style>
 	.article-layout {
-		--sidebar-width: 18rem;
+		--sidebar-width: 20rem;
 		--page-padding: 2rem;
 		--content-width: calc(680px + var(--page-padding));
 		display: flex;
@@ -40,6 +40,7 @@
 			height: calc(100vh - var(--nav-height));
 			width: var(--sidebar-width);
 			background: var(--bg-2);
+			margin: 0 0 0 auto;
 			overflow-y: auto;
 			position: sticky;
 			top: var(--nav-height);

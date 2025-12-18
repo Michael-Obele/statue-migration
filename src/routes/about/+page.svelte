@@ -4,7 +4,6 @@
 	import Mission from '$lib/components/Mission.svelte';
 	import Team from '$lib/components/Team.svelte';
 	import WhyChooseUs from '$lib/components/WhyChooseUs.svelte';
-	import CTA from '$lib/components/CTA.svelte';
 
 	export let data;
 
@@ -47,9 +46,6 @@
 
 			<!-- Why Choose Us Section -->
 			<WhyChooseUs />
-
-			<!-- CTA Section -->
-			<!-- <CTA /> -->
 		</div>
 	</div>
 </div>

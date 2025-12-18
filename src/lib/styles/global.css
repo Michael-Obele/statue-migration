@@ -9,7 +9,7 @@
 	--text-2: #838484;
 	--brand: #f54900;
 	--brand-2: #a066ff;
-	--divider: #2e2e32;
+	--divider: #23252a;
 
 	--font-text: 'IBM Plex Sans', sans-serif;
 	--font-title: 'Fraunces Variable', serif;
@@ -46,9 +46,13 @@ h3,
 h4,
 h5,
 h6 {
-	@apply text-3xl md:text-2xl;
+	@apply scroll-mt-20 text-3xl md:text-2xl;
 }
 
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1em);
+}
+
+hr {
+	background: var(--divider);
 }
