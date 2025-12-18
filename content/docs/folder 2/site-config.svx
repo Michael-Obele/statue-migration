@@ -517,10 +517,3 @@ export interface SiteConfig {
 ```
 
 ---
-
-## Next Steps
-
-- **[Statue.dev](https://statue.dev)** - Official documentation
-- **[New Site Checklist](./new-site-checklist)** - Setup walkthrough
-- **[Components](./components)** - Use config in components
-- **[Themes](./themes)** - Style your site

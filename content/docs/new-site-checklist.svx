@@ -162,10 +162,10 @@ npx wrangler pages deploy build --project-name=your-project
 ## Need Help?
 
 - **[Statue.dev](https://statue.dev)** - Official Statue documentation site
-- **[Getting Started](./get-started)** - Overview of Statue basics
-- **[Site Config](./site-config)** - Configuration details
-- **[Themes](./themes)** - Styling guide
-- **[Components](./components)** - Component reference
+- **[Getting Started](../get-started)** - Overview of Statue basics
+- **[Site Config](../site-config)** - Configuration details
+- **[Themes](../themes)** - Styling guide
+- **[Components](../components)** - Component reference
 
 **Community:**
 - [Statue.dev](https://statue.dev) - Official project site

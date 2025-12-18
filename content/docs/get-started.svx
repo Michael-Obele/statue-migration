@@ -125,18 +125,18 @@ Edit `site.config.js`.
 ## Next Steps
 
 **New to Statue?** Follow the checklist:
-<!--- **[New Site Checklist](./new-site-checklist)** - Step-by-step customization-->
+- **[New Site Checklist](../new-site-checklist)** - Step-by-step customization
 
-<!--**Want to learn more?**
-- **[Site Configuration](./site-config)** - All config options
-- **[Themes](./themes)** - Styling your site
-- **[Components](./components)** - Component reference
-- **[Templates](./templates)** - Using templates
-- **[Routing](./routing)** - How URLs work
+**Want to learn more?**
+- **[Site Configuration](../site-config)** - All config options
+- **[Themes](../themes)** - Styling your site
+- **[Components](../components)** - Component reference
+- **[Templates](../templates)** - Using templates
+- **[Routing](../routing)** - How URLs work
 
 **Need help?**
 - **[Statue.dev](https://statue.dev)** - Official documentation site
 - **[GitHub Issues](https://github.com/accretional/statue/issues)** - Report bugs
-- **[Discord](https://discord.gg/accretional)** - Community chat-->
+- **[Discord](https://discord.gg/accretional)** - Community chat
 
 Happy building! 🗿
