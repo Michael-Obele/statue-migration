@@ -46,10 +46,9 @@
 
 <style>
 	.sidebar {
-		width: var(--sidebar-width);
-		background: var(--bg);
+		background: var(--bg-2);
 		color: var(--text);
-		border-right: 1px solid var(--bg-2);
+		border-right: 1px solid var(--bg);
 		height: 100vh;
 		position: sticky;
 		top: 0;
@@ -82,7 +81,6 @@
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.125rem;
 	}
 
 	.link {
@@ -97,12 +95,12 @@
 	}
 
 	.link:hover {
-		background: var(--bg-2);
+		background: var(--bg);
 		color: var(--text);
 	}
 
 	.link.active {
-		background: var(--bg-2);
+		background: var(--bg);
 		color: var(--text);
 		font-weight: 500;
 	}

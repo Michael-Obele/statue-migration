@@ -4,15 +4,20 @@
 
 	const { navbarItems = [], activePath = '' } = $props();
 
-	const isHome = page.url.pathname === '/';
-
 	let menuOpen = $state(false);
+
+	const isHome = page.url.pathname === '/';
 
 	const closeMenu = () => (menuOpen = false);
 	const toggleMenu = () => (menuOpen = !menuOpen);
 </script>
 
-<nav class={['fixed top-0 z-50 h-(--nav-height) w-full', isHome ? 'bg-(--bg)' : 'bg-(--bg-2)']}>
+<nav
+	class={[
+		'fixed top-0 z-50 h-(--nav-height) w-full bg-(--bg)',
+		!isHome && 'border-b border-b-(--divider)'
+	]}
+>
 	<div class="container mx-auto px-4">
 		<div class="flex h-16 items-center justify-between">
 			<div class="flex items-center">

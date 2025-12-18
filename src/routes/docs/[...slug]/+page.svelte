@@ -5,7 +5,7 @@
 </script>
 
 <article>
-	<main>
+	<main class="flow">
 		<h1>{data.page.metadata.title}</h1>
 		{#if data.page.metadata.description}
 			<p class="description">{data.page.metadata.description}</p>
@@ -16,3 +16,9 @@
 		<OnThisPage sections={data.page.sections} />
 	</main>
 </article>
+
+<style>
+	h1 {
+		margin-bottom: 3rem;
+	}
+</style>

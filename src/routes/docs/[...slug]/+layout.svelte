@@ -5,11 +5,11 @@
 </script>
 
 <div class="article-layout">
-	<aside class="sidebar bg-fuchsia-300">
+	<aside class="sidebar">
 		<DocsContents contents={data.sidebar} />
 	</aside>
 
-	<div class="content bg-orange-300/50">
+	<div class="content">
 		{@render children()}
 	</div>
 </div>
@@ -18,7 +18,7 @@
 	.article-layout {
 		--sidebar-width: 18rem;
 		--page-padding: 1.5rem;
-		--content-width: calc(var(--page-padding) + 640px);
+		--content-width: calc(680px + var(--page-padding));
 		display: flex;
 	}
 

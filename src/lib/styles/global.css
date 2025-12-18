@@ -3,61 +3,52 @@
 @import '@fontsource-variable/fraunces';
 
 :root {
-    --bg: #101012;
-    --bg-2: #1b1d21;
-    --text: #f6f6f6;
-    --text-2: #838484;
-    --brand: #f54900;
-    --brand-2: #a066ff;
+	--bg: #101012;
+	--bg-2: #1b1d21;
+	--text: #f6f6f6;
+	--text-2: #838484;
+	--brand: #f54900;
+	--brand-2: #a066ff;
+	--divider: #2e2e32;
 
+	--font-text: 'IBM Plex Sans', sans-serif;
+	--font-title: 'Fraunces Variable', serif;
 
-    --font-text: 'IBM Plex Sans', sans-serif;
-    --font-title:  'Fraunces Variable', serif;
-
-    --nav-height: 64px;
+	--nav-height: 64px;
 }
 
-
 html {
-     scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-text);
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-text);
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: var(--font-title);
-    font-weight: 800;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-title);
+	font-weight: 300;
 }
 
 h1 {
-    @apply text-4xl md:text-5xl font-light;
+	@apply text-4xl font-light md:text-5xl;
 }
 
-h2,h3,h4,h5,h6 {
-    @apply text-3xl md:text-2xl
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply text-3xl md:text-2xl;
 }
-
-/*button {
-    @apply inline-flex text-white inset-shadow-sm inset-shadow-gray-400 rounded-lg cursor-pointer focus:inset-shadow-white/10;
-        box-shadow:  inset 0 2px 4px var(--text);
-    background: #f54900;
-    padding: 12px 16px;
-}
-
-button.secondary {
-    background: white;
-    color: black;
-}
-
-button:hover {
-    filter:  brightness(105%);
-}*/
-
 
 .flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
+	margin-block-start: var(--flow-space, 1em);
 }
