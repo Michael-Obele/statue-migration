@@ -17,15 +17,12 @@
 
 <NavigationBar navbarItems={directories} activePath="/about" />
 
-<div
-	class="min-h-screen bg-gradient-to-b from-[var(--color-hero-from)] via-[var(--color-hero-via)] to-[var(--color-hero-to)] text-white"
->
-	<!-- Hero Section -->
+<div>
 	<PageHero
 		title="About Your Statue Static Site"
 		description="Customize your Statue about page at src/routes/about/+page.svelte"
 	/>
-	<!-- Content Sections -->
+
 	<div>
 		<div class="container mx-auto px-4 py-16">
 			<p style="text-align: center;">

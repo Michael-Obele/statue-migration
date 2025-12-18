@@ -13,6 +13,6 @@
 
 <NavigationBar navbarItems={data.directories} activePath="/" />
 
-<main>
+<main class="pt-(--nav-height)">
 	{@render children()}
 </main>

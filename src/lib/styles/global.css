@@ -46,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply scroll-mt-20 text-3xl md:text-2xl;
+	@apply scroll-mt-20 text-xl md:text-2xl;
 }
 
 .flow > * + * {

@@ -2,6 +2,6 @@
 	const { children } = $props();
 </script>
 
-<div class="pt-(--nav-height)">
+<div>
 	{@render children()}
 </div>
